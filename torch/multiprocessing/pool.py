@@ -1,12 +1,12 @@
-import multiprocessing.pool
-import multiprocessing.util as util
+import cloudpickle_multiprocess.pool
+import cloudpickle_multiprocess.util as util
 
 from .queue import SimpleQueue
 
 
 def clean_worker(*args, **kwargs):
     import gc
-    multiprocessing.pool.worker(*args, **kwargs)
+    cloudpickle_multiprocess.pool.worker(*args, **kwargs)
     # Regular multiprocessing workers don't fully clean up after themselves,
     # so we have to explicitly trigger garbage collection to make sure that all
     # destructors are called...
