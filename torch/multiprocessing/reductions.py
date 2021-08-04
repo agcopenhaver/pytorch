@@ -3,16 +3,16 @@ import torch.utils.hooks
 from torch._namedtensor_internals import check_serializing_named_tensor
 import os
 import threading
-import multiprocessing
-from multiprocessing.util import register_after_fork
-from multiprocessing.reduction import ForkingPickler
+import cloudpickle_multiprocess
+from cloudpickle_multiprocess.util import register_after_fork
+from cloudpickle_multiprocess.reduction import ForkingPickler
 try:
     # Early load resource_sharer to prevent a partially initialized instance
     # from being inherited in a forked child process. The reduce_storage method
     # requires this module indirectly through DupFd(). The built-in mp.Queue
     # class pickles arguments in a background thread which may overlap with the
     # fork.
-    import multiprocessing.resource_sharer
+    import cloudpickle_multiprocess.resource_sharer
 except ImportError:
     pass
 
