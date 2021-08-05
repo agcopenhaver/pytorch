@@ -1,7 +1,7 @@
 
 from typing import Optional
-import multiprocessing
-import multiprocessing.connection
+import cloudpickle_multiprocess
+import cloudpickle_multiprocess.connection
 import signal
 import sys
 import warnings
