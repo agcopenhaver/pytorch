@@ -22,10 +22,10 @@ __all__ = ['set_sharing_strategy', 'get_sharing_strategy',
            'get_all_sharing_strategies']
 
 
-from multiprocessing import *  # noqa: F403
+from cloudpickle_multiprocess import *  # noqa: F403
 
 
-__all__ += multiprocessing.__all__  # type: ignore[attr-defined]
+__all__ += cloudpickle_multiprocess.__all__  # type: ignore[attr-defined]
 
 
 # This call adds a Linux specific prctl(2) wrapper function to this module.
