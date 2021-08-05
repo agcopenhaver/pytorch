@@ -3,7 +3,7 @@ import sys
 __all__ = ['register_after_fork']
 
 if sys.platform == 'win32' or sys.version_info < (3, 7):
-    import multiprocessing.util as _util
+    import cloudpickle_multiprocess.util as _util
 
     def _register(func):
         def wrapper(arg):
