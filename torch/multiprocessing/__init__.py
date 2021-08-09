@@ -16,7 +16,7 @@ contents, and we recommend referring to very good docs of the original module.
 import torch
 import sys
 from .reductions import init_reductions
-import multiprocessing
+#import multiprocessing
 
 __all__ = ['set_sharing_strategy', 'get_sharing_strategy',
            'get_all_sharing_strategies']
